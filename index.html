@@ -1,10 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/go-game-learning/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Trae Project</title>
+    <title>围棋学习 - 从入门到精通</title>
+    <script>
+      // GitHub Pages 单页应用路由处理
+      (function() {
+        var l = window.location;
+        if (l.search) {
+          var q = {};
+          l.search.slice(1).split('&').forEach(function(v) {
+            var a = v.split('=');
+            q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+          });
+          if (q.p !== undefined) {
+            window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + (q.p || '') +
+              (q.q ? ('?' + q.q) : '') +
+              l.hash
+            );
+          }
+        }
+      }());
+    </script>
     <script type="module" crossorigin src="/go-game-learning/assets/index-CCwqk9uQ.js"></script>
     <link rel="stylesheet" crossorigin href="/go-game-learning/assets/index-CNJZdncX.css">
   </head>
